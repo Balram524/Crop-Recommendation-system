@@ -173,12 +173,71 @@
         </div>
       </form>
 
-      {% if result %}
+      <!-- {% if result %}
       <div class="card bg-dark" style="width: 18rem">
         <img
           src="{{url_for('static', filename='img.jpg')}}"
           class="card-img-top"
           alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Recommend Crop for cultivation is:</h5>
+          <p class="card-text">
+            <span>{{ result }}</span> is the best crop to be cultivated right
+            there...
+          </p>
+        </div>
+      </div>
+      {% endif %} -->
+
+      {% set crop_images = { "Rice":
+      "https://c1.peakpx.com/wallpaper/309/299/720/rice-field-paddy-food-green-farm-wallpaper.jpg",
+      "Maize":
+      "https://www.theayurveda.org/wp-content/uploads/2015/10/Growing-maize-crop.jpg",
+      "Apple":
+      "http://www.newenglandapples.org/wp-content/uploads/2016/09/WO-Honeycrisp-L.jpg",
+      "Jute":
+      "https://i.pinimg.com/originals/4d/9c/a0/4d9ca05ed3ea1b6137817a13cd14aa7d.jpg",
+      "Cotten":
+      "https://c8.alamy.com/comp/D29FXK/cotton-crop-in-andhra-pradesh-india-D29FXK.jpg",
+      "Coconut":
+      "https://www.asiafarming.com/wp-content/uploads/2015/09/Coconut-Cultivation1.png",
+      "Papaya":
+      "https://www.iva.de/sites/default/files/benutzer/%25uid/magazinbilder/papayabaum_344505437_shutterstock.jpg",
+      "Orange":
+      "https://floridainsider.com/wp-content/uploads/2022/02/orangecrop-768x509.png",
+      "Muskmelon": "https://s3-eu-west-1.amazonaws.com/yara-links/lggw.jpg",
+      "Watermelon":
+      "https://thumbs.dreamstime.com/b/watermelon-crop-fruiting-stage-49681000.jpg",
+      "Grapes":
+      "https://www.almanac.com/sites/default/files/image_nodes/green-grapes.jpg",
+      "Mango":
+      "https://cdn.freshfruitportal.com/2017/03/Mango-shutterstock_104220134-1024x679.jpg",
+      "Banana":
+      "https://i.pinimg.com/originals/3b/ae/df/3baedf8c69430529d175e1165b0ec880.jpg",
+      "Pomegranate":
+      "https://gardenerspath.com/wp-content/uploads/2022/03/Best-Pomegranate-Varieties-Feature.jpg",
+      "Lentil":
+      "https://morningchores.com/wp-content/uploads/2020/05/lentil-plants.jpg",
+      "Blackgram":
+      "https://www.agrifarming.in/wp-content/uploads/2020/11/Pic2.jpg",
+      "Mungbean":
+      "https://foundationfar.org/wp-content/uploads/2022/11/Banner-photo-scaled-e1667401974268-2500x1601.jpg",
+      "Mothbeans":
+      "https://a-z-animals.com/media/2023/03/iStock-1386092327.jpg",
+      "Pigeonpeas":
+      "https://image.shutterstock.com/z/stock-photo-pigeon-pea-crop-maharashtra-india-191983832.jpg",
+      "Kidneybeans":
+      "https://www.seedbasket.in/image/cache/catalog/Products/Non%20Hybrid/Cowpea-seeds-500x500-0.pngg",
+      "Chickpea":
+      "https://cdn.mos.cms.futurecdn.net/mmrjcWoheuvmnucbNy246i.jpg", "Coffee":
+      "https://masalachilli.com/wp-content/uploads/2018/01/coffee-plantation.jpg",
+      } %} {% if result %}
+      <div class="card bg-dark" style="width: 18rem">
+        <img
+          src="{{ crop_images.get(result, url_for('static', filename='default.jpg')) }}"
+          class="card-img-top"
+          alt="Image of {{ result }} crop"
         />
         <div class="card-body">
           <h5 class="card-title">Recommend Crop for cultivation is:</h5>
